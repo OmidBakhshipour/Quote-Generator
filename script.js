@@ -43,9 +43,10 @@ function newQuote() {
 
 async function getQuotes() {
     showLoader();
+    const proxyUrl = 'https://blooming-reaches-60404.herokuapp.com/';
     const apiUrl = 'https://type.fit/api/quotes';
     try {
-        const response = await axios.get(apiUrl);
+        const response = await axios.get(proxyUrl + apiUrl);
         apiQuotes = response.data;
         newQuote();
 
